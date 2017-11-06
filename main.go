@@ -5,6 +5,7 @@ import (
 	"net/http"
 )
 
+
 func main(){
 	// fmt.Println("Hello Go, Long time no see!")
 	// if len(os.Args) <= 1 {
@@ -18,7 +19,7 @@ func main(){
 		videoId := (*r).Form["id"][0]
 		link := Download(videoId)
 		fmt.Println(videoId)
-		fmt.Fprintf(w, fmt.Sprintf("%s", link))
+		fmt.Fprintf(w, link.String())
 	})
 
 	http.ListenAndServe(":80", nil)
