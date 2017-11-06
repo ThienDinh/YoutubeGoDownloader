@@ -18,7 +18,7 @@ func main(){
 		videoId := (*r).Form["id"][0]
 		link := Download(videoId)
 		fmt.Println(videoId)
-		fmt.Fprintf(w, fmt.Sprintf("<a target=\"_blank\" href=\"%s\">Click to download the audio file.</a>", link))
+		fmt.Fprintf(w, fmt.Sprintf("%s", link))
 	})
 
 	http.ListenAndServe(":80", nil)
