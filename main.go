@@ -12,7 +12,7 @@ func main(){
 	// 	return
 	// }
 
-	http.HandleFunc("/download", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		r.ParseForm()
 		fmt.Println("Request was:")
 		videoId := (*r).Form["id"][0]
