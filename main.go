@@ -14,11 +14,11 @@ func main(){
 	// }
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		r.ParseForm()
 		fmt.Println("Request was:")
-		videoId := (*r).Form["id"][0]
+		r.ParseForm()
+		fmt.Println((*r).Form)
+		videoId := ((*r).Form["id"])[0]
 		link := Download(videoId)
-		fmt.Println(videoId)
 		fmt.Fprintf(w, link.String())
 	})
 
