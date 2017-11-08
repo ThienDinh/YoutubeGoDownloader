@@ -39,7 +39,7 @@ func Download(videoId string)  (youtubeVideo YoutubeVideo){
 				downloadUrl, _ := videoInfor.GetDownloadURL(format)
 				link, _ := url.QueryUnescape(downloadUrl.String())
 				// thumbnail := url.QueryUnescape("")
-				thumbnail := videoInfor.GetThumbnailURL(ytdl.ThumbnailQualityMaxRes).String()
+				thumbnail := videoInfor.GetThumbnailURL(ytdl.ThumbnailQualityDefault).String()
 				youtubeVideo = YoutubeVideo{Id: videoId, Title:(*videoInfor).Title, Extension: format.Extension, Duration: (*videoInfor).Duration,
 					VideoLink: link, ThumbnailLink: thumbnail}
 				fmt.Printf("%v\n", youtubeVideo)				
